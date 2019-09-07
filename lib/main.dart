@@ -55,10 +55,22 @@ class _MyHomePageState extends State<MyHomePage> {
                 ],
               ),
             ),
-            floatingActionButton: FloatingActionButton(
-              onPressed: () => counterBloc.dispatch(IncrementCounter(counter)),
-              tooltip: 'Increment',
-              child: Icon(Icons.add),
+            floatingActionButton: Row(mainAxisAlignment: MainAxisAlignment.end,
+              children: <Widget>[
+                FloatingActionButton(
+                  onPressed: () =>
+                      counterBloc.dispatch(IncrementCounter(counter)),
+                  tooltip: 'Increment',
+                  child: Icon(Icons.add),
+                ),
+                Padding(padding: EdgeInsets.only(left: 20),), 
+                FloatingActionButton(
+                  onPressed: () =>
+                      counterBloc.dispatch(DecrementCounter(counter)),
+                  tooltip: 'Decrement',
+                  child: Icon(Icons.remove),
+                ),
+              ],
             ),
           );
         });

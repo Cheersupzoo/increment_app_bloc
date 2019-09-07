@@ -14,3 +14,12 @@ class IncrementCounter extends CounterEvent {
   @override
   String toString() => 'IncrementCounter {counter : $counter}';
 }
+
+class DecrementCounter extends CounterEvent {
+  final int counter;
+  
+  DecrementCounter(this.counter) : super([counter]);
+
+  @override
+  String toString() => 'DecrementCounter {counter : $counter}';
+}
